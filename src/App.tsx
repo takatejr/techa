@@ -1,12 +1,11 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.scss";
 import Navbar from "./core/navbar";
 import { Post } from "./core/post";
 
 
 function App() {
-const [language, setLanguage] = useState("SCALA")
+// const [language, setLanguage] = useState("SCALA")
 
   return (
     <div>

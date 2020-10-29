@@ -15,7 +15,6 @@ export function Post() {
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
 
-  
   if (isLoading) {
     return <h2>Ładowanie...</h2>;
   }
@@ -24,29 +23,39 @@ export function Post() {
     return <h2>Wystąpił błąd: {error}</h2>;
   }
 
-  const datax: Array<Posts> = [
+  const dat: Array<Posts> = [
     {
-      logo: "abc",
+      logo: "SCALA",
       title: "hey",
-      author: "author",
-      content: "content",
-      autograph: "autograph",
+      author: "Person aka Takate",
+      content: "It's my first post here, so i need more content to fill that website, lorem ipsum is too mainstream, so i want to write some text by myself. See you later aligator",
+      autograph: `Here would be image of ur "autograph" `,
+    },    {
+      logo: "SCALA",
+      title: "hey",
+      author: "Person aka Takate",
+      content: "It's my first post here, so i need more content to fill that website, lorem ipsum is too mainstream, so i want to write some text by myself. See you later aligator",
+      autograph: `Here would be image of ur "autograph" `,
+    },    {
+      logo: "SCALA",
+      title: "hey",
+      author: "Person aka Takate",
+      content: "It's my first post here, so i need more content to fill that website, lorem ipsum is too mainstream, so i want to write some text by myself. See you later aligator",
+      autograph: `Here would be image of ur "autograph" `,
     },
   ];
 
   return (
     <div className="container">
-      {datax.map((el) => {
+      {dat.map((el) => (
         <div className="post">
-          <div>{el.logo}</div>
-          <h1 aria-label="title" title="title">
-            {el.title}
-          </h1>
+          <div className="logo">{el.logo}</div>
+          <p aria-label="title" title="title">{el.title}</p>
           <span>{el.author}</span>
           <div className="content">{el.content}</div>
-          <div className="autograph">{el?.autograph}</div>
-        </div>;
-      })}
+          <div className="autograph">{el.autograph}</div>
+        </div>
+      ))}
     </div>
   );
 }

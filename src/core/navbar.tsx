@@ -6,23 +6,23 @@ function Navbar() {
   const [Visible, setVisible] = useState(false);
 
   const navbarButtons: Array<navbarButtons> = [
-    { title: "1st button",
+    { title: "Front-End",
     acordeonOptions: [{ title: "huehue" }, { title: "huehue2" }],
   },
-    { title: "2nd button" },
+    { title: "Back-End" },
     {
-      title: "3rd button",
+      title: "Data Science",
       acordeonOptions: [{ title: "huehue" }, { title: "huehue2" }],
     },
-    { title: "4rd button"}
+    { title: "Other"}
   ];
 
   return (
     <div className="Navbar">
       <div className="logo">LOGO</div>
       {navbarButtons.map((el) => (
-        <div className="button"> {el.title}
-         {el.acordeonOptions?.map((el) =>  <div hidden>{el.title}</div> )}
+        <div className="button" key={el.title}> {el.title}
+         {el.acordeonOptions?.map((el) =>  <div key={el.title} hidden>{el.title}</div> )}
         </div>
       ))}
     </div>

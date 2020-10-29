@@ -3,5 +3,5 @@ export interface Posts {
     title: string,
     author: string,
     content: string, 
-    autograph: string
+    autograph?: string
 }
