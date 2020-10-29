@@ -1,14 +1,17 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import Navbar from "./core/navbar";
-import { Content } from "./core/content";
+import { Post } from "./core/post";
+
 
 function App() {
+const [language, setLanguage] = useState("SCALA")
+
   return (
     <div>
       <Navbar></Navbar>
-      <Content></Content>
+      <Post></Post>
     </div>
   );
 }
