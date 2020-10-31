@@ -51,12 +51,12 @@ $buttonsWidth: (100vw - 15vw) / $buttonsLength;
 
   & > .logo {
     margin: 0;
-    width: 10vh;
+    width: 6vh;
     height: 5vh;
   }
 
   & > p {
-    width: 50vw;
+    width: 80%;
     height: 5vh;
   }
 
@@ -86,7 +86,7 @@ $buttonsWidth: (100vw - 15vw) / $buttonsLength;
   }
 
   & > .autograph {
-    margin: 0 0 0 60vw;
+    margin: 0 0 0 60%;
     height: 10vh;
   }
 }

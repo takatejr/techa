@@ -1,27 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Posts } from "../types/posts.type";
 
-export function Post() {
-  const [posts, getPosts] = useState();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [PostsPerPage, setPostsPerPage] = useState(1);
+type postsx = {
+  id: number,
+  title: string,
+  body: string,
+}
 
-  const { isLoading, error, data } = useQuery("posts", async (posts) => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/${posts}`);
-    return res.json();
-  });
 
-  const indexOfLastPost = currentPage * PostsPerPage;
-  const indexOfFirstPost = indexOfLastPost - PostsPerPage;
+export function Post({posts}) {
 
-  if (isLoading) {
-    return <h2>Ładowanie...</h2>;
-  }
-
-  if (error) {
-    return <h2>Wystąpił błąd: {error}</h2>;
-  }
+  // if(loading) {
+  //   return <h2>Loading...</h2>
+  // }
 
   const dat: Array<Posts> = [
     {
@@ -32,13 +24,13 @@ export function Post() {
       autograph: `Here would be image of ur "autograph" `,
     },    {
       logo: "SCALA",
-      title: "hey",
+      title: "heyo",
       author: "Person aka Takate",
       content: "It's my first post here, so i need more content to fill that website, lorem ipsum is too mainstream, so i want to write some text by myself. See you later aligator",
       autograph: `Here would be image of ur "autograph" `,
     },    {
       logo: "SCALA",
-      title: "hey",
+      title: "heyx",
       author: "Person aka Takate",
       content: "It's my first post here, so i need more content to fill that website, lorem ipsum is too mainstream, so i want to write some text by myself. See you later aligator",
       autograph: `Here would be image of ur "autograph" `,
@@ -48,7 +40,7 @@ export function Post() {
   return (
     <div className="container">
       {dat.map((el) => (
-        <div className="post">
+        <div key={`${el.title}` + `${el.author}`} className="post">
           <div className="logo">{el.logo}</div>
           <p aria-label="title" title="title">{el.title}</p>
           <span>{el.author}</span>
@@ -56,6 +48,10 @@ export function Post() {
           <div className="autograph">{el.autograph}</div>
         </div>
       ))}
+      {/* {<ul>
+        <div>{title}</div>
+        <div>{body}</div>
+        </ul>} */}
     </div>
   );
 }
