@@ -25,8 +25,16 @@ const lool = [{
         autograph: "string"
         }];
 
-
+let ee = 9;
 app.get("/api/users", (req, res) => {
+  ee++
+  lool.push({
+    logo: "string1",
+    title: `${ee}`,
+    author: "string",
+    content: "string", 
+    autograph: "string"
+    })
   res.json(lool)
   })
 
