@@ -1,4 +1,5 @@
 import React from "react";
+import { Posts } from '../types/posts.type';
 
 export const Post = ({ posts, loading }) => {
   if (loading) {
@@ -9,7 +10,7 @@ export const Post = ({ posts, loading }) => {
 
   return (
     <div className="container">
-      {posts.map(({ title, author, logo, content, autograph }) => (
+      {posts.map(({ title, author, logo, content, autograph, comments }: Posts) => (
         <div key={`${title}` + `${author}`} className="post">
           <div className="logo">{logo}</div>
           <p aria-label="title" title="title">
@@ -18,10 +19,10 @@ export const Post = ({ posts, loading }) => {
           <span>{author}</span>
           <div className="content">{content}</div>
           <div className="autograph">{autograph}</div>
+          <div>{comments}</div>
         </div>
       ))}
     </div>
   );
 };
-
 export default Post;

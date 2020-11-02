@@ -39,7 +39,7 @@ function App() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: React.SetStateAction<number>) => setCurrentPage(pageNumber);
 
   if (isLoading) {
     return <h2>Ładowanie...</h2>;

@@ -22,7 +22,7 @@ function Navbar() {
       <div className="logo">LOGO</div>
       {navbarButtons.map((el) => (
         <div className="button" key={el.title}> {el.title}
-         {el.acordeonOptions?.map((el) =>  <div key={el.title} hidden>{el.title}</div> )}
+         {el.acordeonOptions?.map((el) =>  <div key={el.title} className='drop'>{el.title}</div> )}
         </div>
       ))}
     </div>
