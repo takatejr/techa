@@ -1,5 +1,6 @@
 import React from "react";
 import { Posts } from '../types/posts.type';
+import Comments from "./comments";
 
 export const Post = ({ posts, loading }) => {
   if (loading) {
@@ -19,7 +20,7 @@ export const Post = ({ posts, loading }) => {
           <span>{author}</span>
           <div className="content">{content}</div>
           <div className="autograph">{autograph}</div>
-          <div>{comments}</div>
+          <Comments comments={comments}></Comments>
         </div>
       ))}
     </div>

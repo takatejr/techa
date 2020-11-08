@@ -32,8 +32,8 @@ app.get("/api/users", (req, res) => {
     logo: "string1",
     title: `${ee}`,
     author: "string",
-    content: "string", 
-    autograph: "string"
+    content: "Lorem ipsum", 
+    autograph: ""
     })
   res.json(lool)
   })
@@ -47,7 +47,6 @@ app.post("/api/user", (req, res) => {
 
 app.get("/api/betdata", (req, res) => {
   scrapeProduct().then((arr) => (matches = arr))
-  console.log(`Sprawdzam czy dziś coś grają`)
 
   res.json("scraped")
 })
@@ -59,19 +58,6 @@ app.get("/api/betdatas", (req, res) => {
 
 app.post("/api/matchID", (req, res) => {
   const lastMatchID = req.body.currentID
-
-  console.log(
-    `POBRANO MECZ O ID = ${lastMatchID}, ZACZYNAM WYKONYWAC DALSZE POBIERANIE`
-  )
-
-  if (!scrapedMoreDetailed.includes(lastMatchID)) {
-    winLose(lastMatchID)
-    // seasonScore(lastMatchID)
-    scrapedMoreDetailed.push(lastMatchID)
-  } else {
-    console.clear()
-    console.log("To ID zostało już użyte")
-  }
   res.json(matches)
 })
 

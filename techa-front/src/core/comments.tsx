@@ -1,7 +1,7 @@
 import React from "react";
 import { Posts } from '../types/posts.type';
 
-export const Comments = ({ comments }: Posts) => {
+export const Comments = ({ comments }) => {
 const commentse = [{comment: 'heheh'}, {comment: 'heheh'}, {comment: 'heheh'}, ]
 
   return (
